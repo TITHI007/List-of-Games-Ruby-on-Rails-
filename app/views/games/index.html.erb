@@ -1,0 +1,22 @@
+<table border="1" class="table-hover table-dark table-striped" >
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name of the Game</th>
+        <th>Developer</th>
+        <th>Category</th>
+        <th>Game Picture</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @games.each do |game| %>
+    <tr class="<%=cycle('odd','even')%>">
+        <td><%= link_to game['id'],game_path(game['id'])%></td>
+        <td><%= game['title']%></td>
+        <td><%= game['developer']%></td>
+        <td><%= game['platform']%></td>
+        <td><%= image_tag(game['thumbnail'])%></td>
+    </tr>
+    <%end%>
+    </tbody>
+</table>
