@@ -1,13 +1,18 @@
-
-
-<!-- Add more details as needed -->
-<h2><%= @game_['id'] %></h2>
-<div class="container">
-        <div class="row">
-            <div class="col-4"><%= image_tag(@game_['thumbnail'])%></div>
-            <div class="col-8">
-                <h2><%= @game_['title'] %></h2>
-                <p><%= @game_['short_description'] %> <br/> Genre is <%= @game_['genre'] %><br/> Developed by <%= @game_['developer'] %> <br/> Platform to play game is <%= @game_['platform'] %> <br/> Game URL is <%= link_to @game_['freetogame_profile_url'], @game_['freetogame_profile_url'], target:"_blank" %></p>
-            </div>
-        </div>
+<div class="game-details container mt-4">
+  <div class="row">
+    <div class="col-md-4">
+      <h2 class="mb-4">ID: <%= @game_['id'] %></h2>
+      <%= image_tag(@game_['thumbnail'], class: "img-fluid rounded") %>
+    </div>
+    <div class="col-md-8">
+      <h2><%= @game_['title'] %></h2>
+      <p class="lead">
+        <strong>Description:</strong> <%= @game_['short_description'] %><br/>
+        <strong>Genre:</strong> <%= @game_['genre'] %><br/>
+        <strong>Developer:</strong> <%= @game_['developer'] %><br/>
+        <strong>Platform:</strong> <%= @game_['platform'] %><br/>
+        <strong>Game URL:</strong> <%= link_to "Visit Game Profile", @game_['freetogame_profile_url'], class: "btn btn-primary", target: "_blank" %>
+      </p>
+    </div>
+  </div>
 </div>

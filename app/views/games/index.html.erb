@@ -1,4 +1,4 @@
-<table border="1" class="table-hover table-dark table-striped" >
+<table border="1" class="table-hover table-striped" >
     <thead>
     <tr>
         <th>ID</th>
@@ -6,16 +6,18 @@
         <th>Developer</th>
         <th>Category</th>
         <th>Game Picture</th>
+        <th>More details</th>
     </tr>
     </thead>
     <tbody>
     <% @games.each do |game| %>
     <tr class="<%=cycle('odd','even')%>">
-        <td><%= link_to game['id'],game_path(game['id'])%></td>
+        <td><%= game['id']%></td>
         <td><%= game['title']%></td>
         <td><%= game['developer']%></td>
         <td><%= game['platform']%></td>
         <td><%= image_tag(game['thumbnail'])%></td>
+         <td class="col-lg-2"><%= link_to "view details",game_path(game['id']), class:"btn btn-primary"%></td>
     </tr>
     <%end%>
     </tbody>
