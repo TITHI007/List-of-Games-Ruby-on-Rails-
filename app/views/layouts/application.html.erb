@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TithiAssignment3</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  
+
+  <body>
+    <div class="container">
+    <div class="row">
+    <div class="col"></div>
+    <div class="col-10">
+    <h2 >Games to explore</h2>
+
+    <%= yield %>
+    </div>
+    <div class="col"></div>
+    </div>
+    </div>
+  </body>
+</html>

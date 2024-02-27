@@ -1,0 +1,13 @@
+
+
+<!-- Add more details as needed -->
+<h2><%= @game_['id'] %></h2>
+<div class="container">
+        <div class="row">
+            <div class="col-4"><%= image_tag(@game_['thumbnail'])%></div>
+            <div class="col-8">
+                <h2><%= @game_['title'] %></h2>
+                <p><%= @game_['short_description'] %> <br/> Genre is <%= @game_['genre'] %><br/> Developed by <%= @game_['developer'] %> <br/> Platform to play game is <%= @game_['platform'] %> <br/> Game URL is <%= link_to @game_['freetogame_profile_url'], @game_['freetogame_profile_url'], target:"_blank" %></p>
+            </div>
+        </div>
+</div>
