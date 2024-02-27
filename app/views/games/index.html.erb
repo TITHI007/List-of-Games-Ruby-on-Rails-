@@ -1,10 +1,18 @@
+<%= form_tag('/', method: 'get', class: 'mb-4') do %>
+    <div class="input-group px-4">
+      <%= text_field_tag :search_term, params[:search_term], class: 'form-control', placeholder: 'Search by title' %>
+      <div class="input-group-append mx-4">
+        <%= submit_tag 'Search', class: 'btn btn-primary' %>
+      </div>
+    </div>
+<% end %>
 <table border="1" class="table-hover table-striped" >
     <thead>
     <tr>
         <th>ID</th>
         <th>Name of the Game</th>
         <th>Developer</th>
-        <th>Category</th>
+        <th>Platform</th>
         <th>Game Picture</th>
         <th>More details</th>
     </tr>
@@ -17,7 +25,7 @@
         <td><%= game['developer']%></td>
         <td><%= game['platform']%></td>
         <td><%= image_tag(game['thumbnail'])%></td>
-         <td class="col-lg-2"><%= link_to "view details",game_path(game['id']), class:"btn btn-primary"%></td>
+        <td class="col-lg-2"><%= link_to "view details",game_path(game['id']), class:"btn btn-primary"%></td>
     </tr>
     <%end%>
     </tbody>

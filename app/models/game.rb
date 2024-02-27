@@ -5,9 +5,16 @@ class Game
     def self.all
 		get('/')
 	end
-	def self.search(platform)
-		get("?platform=#{platform}")
+	
+	def self.search(title)
+		all_games=all
+		parsed_games=JSON.parse(all_games.body)
+		filtered_title=parsed_games.select{
+			|game| game['title'].downcase.include?(title.downcase)
+		} 
+		return filtered_title
 	end
+
 	def self.find(id)
 		games=get('/')
 		for game in games
